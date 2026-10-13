@@ -11,11 +11,74 @@
         <h1>Practico Chart - Cap Bar Chart</h1>
     </header>
     <main>
+        <canvas id="GraficoBarra">
 
+        </canvas>
     </main>
     <footer>
-        <a href=""></a>
+        <a href="index.js"></a>
     </footer>
-<script src="index.js"></script>
+ <script src="./node_modules/chart.js/dist/chart.umd.js"></script>
+<script>
+    const ctx = document.getElementById('GraficoBarra');
+    const datos = [
+        {mes: 'Enero', HC:121,RF:125},
+        {mes: 'Febrero', HC:200,RF:210},
+        {mes: 'Marzo', HC:100,RF:105},
+        {mes: 'Abril', HC:90,RF:130},
+        {mes: 'Mayo', HC:10,RF:5},
+        {mes: 'Junio', HC:80,RF:90},
+        {mes: 'Julio', HC:121,RF:130},
+       
+    ]
+    datos.sort()
+    new Chart(ctx,{
+        type:'bar',
+        data:{
+            labels:datos.map(d=>d.mes),
+            datasets:[{
+                label:'HC',
+                data:datos.map(d=>d.HC),
+                borderWidth:1,
+                backgroundColor: ' #253568',
+                borderRadius:10,
+             
+                
+            },
+            {
+                label:'RF',
+                type:'line',
+                data:datos.map(d=>d.RF),
+                tension:0.5,
+                pointRadius:6,
+                pointBackgroundColor: '#BA8E23',
+
+            }
+
+        ]
+        },
+        options:{
+            responsive: true,
+    maintainAspectRatio: false,
+            scales:{
+                y:{
+                    beginAtZero:true
+                },
+                x:{
+                    grid:{
+                        offset:true
+                    }
+                }
+            },
+            puglins:{
+                colors:{
+                    forceOverride:true
+                }
+            }
+        }
+    }
+
+    )
+</script>
 </body>
 </html>
