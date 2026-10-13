@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+  min-width: 100vw;
+  height: 100vh;
+  width: 100%;
+background: #266fde;
+background: radial-gradient(circle, rgba(38, 111, 222, 1) 91%, rgba(129, 155, 230, 1) 100%);
+  color: rgb(238, 236, 236);
+}
+header {
+  width: 50%;
+  padding: 1.6rem;
+  border: none;
+  border-radius: 2rem;
+  text-align: center;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
